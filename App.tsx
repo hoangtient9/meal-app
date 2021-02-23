@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View } from 'react-native';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import BodyText from './components/BodyText';
+import MealsNavigation from './navigation/MealsNavigation';
 
 const App = () => {
-  return <View><Text>new app</Text></View>
-}
+	const [loaded] = useFonts({
+		'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+		'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+	});
 
-export default App
+	if (!loaded) {
+		return <AppLoading />;
+	}
+	return <MealsNavigation />
+};
 
-
-
+export default App;
