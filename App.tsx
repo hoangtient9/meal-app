@@ -4,6 +4,9 @@ import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import BodyText from './components/BodyText';
 import MealsNavigation from './navigation/MealsNavigation';
+import { enableScreens } from 'react-native-screens';
+
+enableScreens();
 
 const App = () => {
 	const [loaded] = useFonts({
@@ -14,7 +17,7 @@ const App = () => {
 	if (!loaded) {
 		return <AppLoading />;
 	}
-	return <MealsNavigation />
+	return <MealsNavigation />;
 };
 
 export default App;

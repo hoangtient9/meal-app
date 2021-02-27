@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TextProps } from 'react-native';
 
-interface BodyTextProps {
+interface BodyTextProps extends TextProps {
   style?: object
 }
 
