@@ -5,7 +5,7 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import { MEALS } from '../data/dummy-data';
 import MealList from '../components/MealList';
-import HeaderButton from '../components/HeaderButtons';
+import HeaderButton from '../components/HeaderButton';
 
 const FavoritesScreen: NavigationStackScreenComponent = ({ navigation }) => {
 	const categoryId = navigation.getParam('categoryId');

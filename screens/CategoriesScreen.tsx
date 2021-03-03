@@ -6,7 +6,7 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { DrawerActions } from 'react-navigation-drawer';
 
 import CategoryGirdTitle from '../components/CategoryGirdTitle';
-import HeaderButton from '../components/HeaderButtons';
+import HeaderButton from '../components/HeaderButton';
 interface ItemProps {
 	title: string;
 	id: string;

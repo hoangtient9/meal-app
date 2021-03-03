@@ -9,7 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/colors'
 
 const CustomHeaderButton = (props: HeaderButtonProps) => (
-	<HeaderButton {...props} IconComponent={Ionicons} iconSize={23} color={Platform.OS === 'android' ? 'white' : Colors.primaryColor } />
+	<HeaderButton {...props} IconComponent={Ionicons} iconSize={25} color={Platform.OS === 'android' ? 'white' : Colors.primaryColor } />
 );
 
 export default CustomHeaderButton;
