@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, FlatList, ListRenderItem } from 'react-native';
 import { NavigationStackProp } from 'react-navigation-stack';
 import MealItem from '../components/MealItem';
+import { useAppSelector } from '../store/store';
 
 interface Meal {
 	title: string;
@@ -18,11 +19,17 @@ interface MealListProps {
 }
 
 const MealList: React.FC<MealListProps> = ({ navigation, categoryMeals }) => {
+	const mealsFavorite = useAppSelector((state) => state.meals.favoritesMeals);
 	const renderItem: ListRenderItem<Meal> = ({ item }) => {
+		const isFavorite = mealsFavorite.some((meal) => meal.id === item.id);
 		return (
 			<MealItem
 				onMealSelect={() => {
-					navigation.navigate('MealDetail', { mealId: item.id });
+					navigation.navigate('MealDetail', {
+						mealId: item.id,
+						mealTitle: item.title,
+						isFavorite
+					});
 				}}
 				title={item.title}
 				image={item.imageUrl}

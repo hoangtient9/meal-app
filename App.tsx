@@ -1,10 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import BodyText from './components/BodyText';
 import MealsNavigation from './navigation/MealsNavigation';
 import { enableScreens } from 'react-native-screens';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 enableScreens();
 
@@ -17,7 +17,11 @@ const App = () => {
 	if (!loaded) {
 		return <AppLoading />;
 	}
-	return <MealsNavigation />;
+	return (
+		<Provider store={store}>
+			<MealsNavigation />
+		</Provider>
+	);
 };
 
 export default App;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, FlatList, ListRenderItem } from 'react-native';
-import { CATEGORIES } from '../data/dummy-data';
-import { NavigationStackScreenComponent } from 'react-navigation-stack';
-import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { FlatList, ListRenderItem, StyleSheet, View } from 'react-native';
 import { DrawerActions } from 'react-navigation-drawer';
-
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { NavigationStackScreenComponent } from 'react-navigation-stack';
 import CategoryGirdTitle from '../components/CategoryGirdTitle';
 import HeaderButton from '../components/HeaderButton';
+import { CATEGORIES } from '../data/dummy-data';
+
 interface ItemProps {
 	title: string;
 	id: string;
